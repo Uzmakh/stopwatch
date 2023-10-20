@@ -1,6 +1,6 @@
-var startTime; // to keep track of the start time
-var stopwatchInterval; // to keep track of the interval
-var elapsedPausedTime = 0; // to keep track of the elapsed time while stopped
+let startTime; // to keep track of the start time
+let stopwatchInterval; // to keep track of the interval
+let elapsedPausedTime = 0; // to keep track of the elapsed time while stopped
 
 function startStopwatch() {
     if (!stopwatchInterval) {
@@ -22,12 +22,12 @@ function resetStopwatch() {
 }
 
 function updateStopwatch() {
-    var currentTime = new Date().getTime(); // get current time in milliseconds
-    var elapsedTime = currentTime - startTime; // calculate elapsed time in milliseconds
-    var seconds = Math.floor(elapsedTime / 1000) % 60; // calculate seconds
-    var minutes = Math.floor(elapsedTime / 1000 / 60) % 60; // calculate minutes
-    var hours = Math.floor(elapsedTime / 1000 / 60 / 60); // calculate hours
-    var displayTime = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds); // format display time
+    let currentTime = new Date().getTime(); // get current time in milliseconds
+    let elapsedTime = currentTime - startTime; // calculate elapsed time in milliseconds
+    let seconds = Math.floor(elapsedTime / 1000) % 60; // calculate seconds
+    let minutes = Math.floor(elapsedTime / 1000 / 60) % 60; // calculate minutes
+    let hours = Math.floor(elapsedTime / 1000 / 60 / 60); // calculate hours
+    let displayTime = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds); // format display time
     document.getElementById("stopwatch").innerHTML = displayTime; // update the display
 }
 
